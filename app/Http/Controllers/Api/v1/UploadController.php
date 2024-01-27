@@ -30,7 +30,7 @@ class UploadController extends Controller
         $extension=$request->file('media')->getClientOriginalExtension();
         Storage::disk('public')->put('media/'.$this->random_file_name.'.'.$extension , $image);
         $media = Media::create([
-            'location' => $this->random_file_name.'.'.$extension,
+            'location' => 'media/'.$this->random_file_name.'.'.$extension,
             'product_id'=>$request->product_id
         ]);
         return new MediaResource($media);

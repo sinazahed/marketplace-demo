@@ -26,7 +26,7 @@ Route::post('/login',[\App\Http\Controllers\Api\v1\AuthController::class,'auth']
 Route::group(['prefix' => 'v1', 'middleware' => ['auth:sanctum']], function(){
     Route::post('/upload/media',[\App\Http\Controllers\Api\v1\UploadController::class,'upload']);
     Route::post('/product/create',[\App\Http\Controllers\Api\v1\ProductController::class,'create']);
-    Route::get('/product/explore',[\App\Http\Controllers\Api\v1\ProductController::class,'explore']);
+    Route::get('/product/explore',[\App\Http\Controllers\Api\v1\ProductController::class,'explore'])->withoutMiddleware(['auth:sanctum']);
     Route::delete('/product/delete/{product}',[\App\Http\Controllers\Api\v1\ProductController::class,'destroy']);
     Route::post('/order/create',[\App\Http\Controllers\Api\v1\OrderController::class,'create']);
 });
