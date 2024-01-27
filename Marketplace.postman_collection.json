@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "1cbb749f-a769-4246-aa45-0f0452526b8c",
+		"name": "Marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29367259"
+	},
+	"item": [
+		{
+			"name": "RegisterNewUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "hipo",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "email@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}api/register",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LoginUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "email@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "default",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}api/login",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|eTvoLmL3WgbbDlRXWHeC6bWHYVASs3z14cKGqMnN34761f30",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "product",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "7000",
+							"type": "text"
+						},
+						{
+							"key": "shipping_price",
+							"value": "1000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/product/create",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"product",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadMedia",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|eTvoLmL3WgbbDlRXWHeC6bWHYVASs3z14cKGqMnN34761f30",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/home/sina/Pictures/Screenshot from 2021-06-03 15-27-44.png"
+						},
+						{
+							"key": "product_id",
+							"value": "11",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/upload/media",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"upload",
+						"media"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ExploreProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|eTvoLmL3WgbbDlRXWHeC6bWHYVASs3z14cKGqMnN34761f30",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/product/explore",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"product",
+						"explore"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "this is test title for",
+							"disabled": true
+						},
+						{
+							"key": "max_price",
+							"value": "10000",
+							"disabled": true
+						},
+						{
+							"key": "sort_price_desc",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "delivery",
+							"value": "1",
+							"description": "Effective on max_price",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|OIaAU2z9TtRWgJ00w3W6ZKfg9nOlyLXcTAJHilGc548dfae3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/product/delete/1",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"product",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "8|eTvoLmL3WgbbDlRXWHeC6bWHYVASs3z14cKGqMnN34761f30",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id[]",
+							"value": "11",
+							"description": "users can not order their own products",
+							"type": "text"
+						},
+						{
+							"key": "product_id[]",
+							"value": "2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "delivery",
+							"value": "1",
+							"description": "affect on invoice and order price",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}api/v1/order/create",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"v1",
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
