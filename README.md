@@ -45,15 +45,17 @@ Important : For sending email set the smtp server configuration in .env file
 
 
 
-#Notes:
+# Notes:
 
  Postman collection is placed in the root of project.
 
  some fake users and media are inserted in database for testing but you can also register with api.
 
-#Tests
+# Tests
 
     php artisan test
+
+test covrage : 90%
 
 
  
