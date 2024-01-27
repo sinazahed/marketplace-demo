@@ -4,12 +4,16 @@ Requirements :
 
 Docker & Docker compose installed.
 
-
+   
 Installation:
 
 1- pull the repository
 
-2- get in directory ( cd marketplace-demo )
+    git clone https://github.com/sinazahed/marketplace-demo.git
+
+2- get in directory
+
+    cd marketplace-demo
 
 3 - run the instalation script :
 
