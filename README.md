@@ -23,6 +23,15 @@ Notes:
 
  some fake users and media are inserted in database for testing but you can also register with api.
 
+Sending Email:
+
+For sending email set the smtp server configuration in .env file
+
+Tests
+
+    php artisan test
+
+
  
 
  
